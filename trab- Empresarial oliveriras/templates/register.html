@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/registerstyle.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form method="post" action="/register">
+        <div class="input-box">
+          <label>Nome Completo</label>
+          <input
+            type="text"
+            placeholder="Enter full name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>CPF</label>
+            <input type="number" placeholder="Enter CPF"name="cpf" required />
+          </div>
+
+          <div class="input-box">
+            <label>Endereço</label>
+            <input
+              type="text"
+              placeholder="Enter street address"
+              name="address"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Telefone</label>
+            <input
+              type="number"
+              placeholder="Enter phone number"
+              name="phone"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label>Email</label>
+            <input
+              type="text"
+              placeholder="Enter email address"
+              name="email"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label>Senha</label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            name="password"
+            required
+          />
+        </div>
+
+        <button>Registrar-se</button>
+      </form>
+    </section>
+  </body>
+</html>
