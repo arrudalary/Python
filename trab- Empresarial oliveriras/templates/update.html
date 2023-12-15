@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <meta charset='utf-8'>
+    <title>Cadastro de pessoas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-sm">
+    <div class="row">
+      <h1>Cadastrar Carro</h1>
+  <div class="col-4">
+   <form action='/update/{{carro[0]['id']}}' method="POST">
+    <div class="mb-3">
+        <label for="marca" class="form-label">marca</label>
+        <input type="text" class="form-control" id="marca" 
+        name=marca
+        value='{{carro[0]["marca"]}}'>
+      </div>
+        <div class="mb-3">
+          <label for="modelo" class="form-label">modelo</label>
+          <input type="text" class="form-control" id="id" 
+          name = "modelo"
+          value='{{carro[0]["modelo"]}}'
+          >
+          </div>
+        <div class="mb-3">
+          <label for="locadora" class="form-label">locadora</label>
+          <input type="text" class="form-control" id="locadora" 
+          name="locadora"
+          value='{{carro[0]["locadora"]}}'>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-clockwise"> </i>Atualizar</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
+
+

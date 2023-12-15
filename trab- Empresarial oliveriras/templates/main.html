@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <meta charset='utf-8'>
+    <title>Cadastro de pessoas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+<body>
+  <div class="container-sm" >
+  <h3><i class="bi bi-people-fill"> </i>Cadastrar Carro</h3>
+  <div class="row">
+    <div class="col-3">
+    <form action="/cadastrar" method="POST">
+          <div class="mb-3">
+        <div class="mb-3">
+          <label for="Nome da Locadora" class="form-label">Nome da Locadora</label>
+          <input type="text" class="form-control" id="locadora" name = "locadora">
+          </div>
+        <div class="mb-3">
+          <label for="Marca do Carro" class="form-label">Marca do Carro</label>
+          <input type="text" class="form-control" id="marca" name=marca>
+        </div>
+        <div class="mb-3">
+            <label for="Modelo do Carro" class="form-label">Modelo do Carro</label>
+            <input type="text" class="form-control" id="modelo" name=modelo>
+          </div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-pencil-square"> </i>Cadastrar</button>
+      </form>
+    </div>
+     <div class="col-3">
+       <p>{{total}} Carros Cadastrados</p>
+     </div> 
+    <h3>Carro Cadastrado</h3>
+      <table class="table table-hover">
+        
+          <tr >
+              <th>Locadora</th>
+              <th>Marca do Carro</th>
+              <th>Modelo do Carro</th>
+              <th>Acões</th>
+          </tr>
+        
+          {% for item in results %}
+          <tr>
+              <td>{{item["locadora"]}}</td>
+              <td>{{item["marca"]}}</td>
+              <td>{{item["modelo"]}}</td>
+              <td><form method="delete" action="/deletar/{{item["id"]}}" >
+                <button class="btn btn-danger" type="submit"><i class="bi bi-trash"> </i>Deletar</button>
+              </form>
+              <td>
+                <form method="get" action='/atualizar/{{item["id"]}}'>
+                <button class="btn btn-secondary" type="submit">
+                  <i class="bi bi-arrow-clockwise"> </i>Atualizar</button></form>
+                </td>
+          </tr>
+          {% endfor %}
+      </table>
+    </div>
+    
+  </div>
+        
+</body>
+</html>
